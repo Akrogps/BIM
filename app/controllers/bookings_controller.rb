@@ -16,6 +16,7 @@ class BookingsController < ApplicationController
       redirect_to bookings_path
     else
       render :new
+    end
   end
 
   private
