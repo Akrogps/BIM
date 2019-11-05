@@ -1,0 +1,53 @@
+.flex-footer {
+  justify-content: space-between;
+  flex-direction: column;
+  padding-top: 60px;
+}
+
+.flex-footer a {
+  font-size: 20px;
+  color: black;
+}
+.flex-footer a:hover{
+  color: white;
+}
+
+.flex-footer p {
+  color: black;
+}
+
+.flex-footer .fab {
+  color: black;
+}
+
+.flex-footer .fab:hover {
+  color: white;
+}
+
+.flex-content {
+  background-color: rgba(5,5,5,0.05);
+}
+
+.flex-description {
+  text-align: left;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.flex-bluebox {
+  background-color: #5FB5AD;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.flex-rights {
+  text-align: center;
+}
+.flex-rights {
+  font-size: 10px;
+}
