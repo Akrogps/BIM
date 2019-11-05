@@ -1,10 +1,11 @@
 .flex-footer {
+  justify-content: space-between;
+  flex-direction: column;
   padding-top: 60px;
-  background-color: #2c2b2b;
 }
 
 .flex-footer a {
-  font-size: 30px;
+  font-size: 20px;
   color: black;
 }
 .flex-footer a:hover{
@@ -25,20 +26,23 @@
 
 .flex-content {
   background-color: rgba(20,20,20,0.2);
-  margin-bottom: 50px;
-  margin-top: 50px;
-  text-align: left;
-  text-indent: 20px;
 }
 
-.flex-container {
+.flex-description {
+  text-align: left;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.flex-bluebox {
   background-color: #5FB5AD;
 }
 
 .flex-center {
   display: flex;
   justify-content: space-between;
-  margin: 100px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .flex-rights {
