@@ -20,4 +20,24 @@
   </div>
 </div>
 
+<div class="container">
+  <div class="card-grid">
+    <% @restaurants.each do |restaurant| %>
+      <div class="card-resto">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <div class="card-resto-infos">
+          <div>
+            <h2><%= restaurant.name %></h2>
+            <p><%=h truncate(restaurant.content, :length => 80) %></p>
+          </div>
+          <p class="card-resto-pricing"> <%= restaurant.price_indication %></p>
+        </div>
+        <div class="card-resto-category">
+          <p><%= restaurant.description %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
 <%= render 'shared/footer' %>
