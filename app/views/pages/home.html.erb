@@ -16,18 +16,18 @@
       <option>2</option>
       <option>3</option>
     </select>
-    <a class="btn btn-flat" href="#">Go</a>
+    <a class="btn btn-flat" href="#restaurants">Go</a>
   </div>
 </div>
 
 <div class="container">
-  <div class="card-grid">
+  <div class="card-grid" id="restaurants">
     <% @restaurants.each do |restaurant| %>
       <div class="card-resto">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <%= cl_image_tag(restaurant.images.first.cloudinary_url, width: 400, height: 300, crop: :fit) %>
         <div class="card-resto-infos">
           <div>
-            <h2><%= restaurant.name %></h2>
+            <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
             <p><%=h truncate(restaurant.content, :length => 80) %></p>
           </div>
           <p class="card-resto-pricing"> <%= restaurant.price_indication %></p>
