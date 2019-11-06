@@ -3,7 +3,7 @@
 <div class="container">
   <div class="row d-flex justify-content-center">
     <div class="flex-main-img col-12">
-      <img src="#" alt="Restaurant picture">
+      <%= cl_image_tag(@restaurant.images.first.cloudinary_url, width: 800, height: 600, crop: :fit) %>
     </div>
     <div class="flex-title text-center col-12">
       <div class="name">
