@@ -8,6 +8,10 @@
   vertical-align: top;
 }
 
+.title {
+  font-family: Open Sans;
+}
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
@@ -17,7 +21,17 @@
 }
 
 .navbar_element {
+  color: #5FB5AD;
+  width: auto;
 }
-#navbar_element_login {
-  padding-left: 20 px;
+
+.navbar_element_login {
+  margin-left: 20px ;
+  color: #5FB5AD;
+  width: auto;
 }
+
+.btn {
+  padding-left: 5px;
+}
+
