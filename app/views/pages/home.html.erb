@@ -25,7 +25,6 @@
     <% @restaurants.each do |restaurant| %>
       <div class="card-resto">
         <%= cl_image_tag(restaurant.images.first.cloudinary_url, width: 400, height: 300, crop: :fit) %>
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
         <div class="card-resto-infos">
           <div>
             <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
