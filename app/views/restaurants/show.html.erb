@@ -1,2 +1,30 @@
-<h1>Restaurants#show</h1>
-<p>Find me in app/views/restaurants/show.html.erb</p>
+<%= render "shared/navbar" %>
+
+<div class="flex-page">
+  <div class="flex-main-img col-12">
+    <img src="#" alt="Restaurant picture">
+  </div>
+  <div class="flex-title col-12">
+    <div class="name">
+      <h1><storng><%="#{restaurant.name}"%></storng></h1>
+    </div>
+    <div class="description">
+      <h4><light><%="#{restaurant.description}"%></light></h4>
+    </div>
+  </div>
+  <div class="flex-content col-8">
+      <p><%="#{restaurant.content}"%></p>
+  </div>
+  <div class="flex-sidebar-restaurant col-4">
+    <div class="flex-info-restaurant">
+      <p id="info"><%="#{restaurant.address}" %></p>
+      <p id="info"><%="#{restaurant.website}" %></p><p id="info"><%="#{restaurant.phone_number}" %></p>
+      <p id="info"><%="#{restaurant.opening_hours}" %></p>
+      <p id="info"><%="#{restaurant.price_indication}" %></p>
+    </div>
+    <a href="https://deliveroo.be/fr" class="btn btn-link btn-outline-success"></a>
+    <a href="https://www.thefork.com/" class="btn btn-link btn-outline-primary"></a>
+  </div>
+</div>
+
+<%= render 'shared/footer' %>
