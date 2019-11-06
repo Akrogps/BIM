@@ -3,28 +3,31 @@
   flex-direction: column;
 }
 
-.flex-footer a {
-  font-size: 16px;
-  color: black;
-}
-.flex-footer a:hover{
-  color: white;
-}
+.flex-footer {
+  a {
+    font-size: 16px;
+    color: black;
 
-.flex-footer p {
-  color: black;
-}
+    &:hover {
+      color: white;
+    }
+  }
 
-.flex-footer .fab {
-  color: black;
-}
+  p {
+    color: black;
+  }
 
-.flex-footer .fab:hover {
-  color: white;
+  .fab {
+    color: black;
+
+    &:hover {
+      color: white;
+    }
+  }
 }
 
 .flex-content {
-  background-color: rgba(5,5,5,0.05);
+  background-color: rgba( 5, 5, 5, 0.05);
 }
 
 .flex-description {
@@ -47,6 +50,7 @@
 .flex-rights {
   text-align: center;
 }
-.flex-rights h5{
+
+.flex-rights h5 {
   font-size: 12px;
 }
