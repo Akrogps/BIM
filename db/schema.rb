@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2019_11_05_120108) do
   create_table "categories_restaurants", id: false, force: :cascade do |t|
     t.bigint "category_id", null: false
     t.bigint "restaurant_id", null: false
+    t.index ["category_id", "restaurant_id"], name: "index_categories_restaurants_on_category_id_and_restaurant_id"
   end
 
   create_table "images", force: :cascade do |t|

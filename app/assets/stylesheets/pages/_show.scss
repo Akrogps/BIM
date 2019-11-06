@@ -1,0 +1,33 @@
+.container {
+
+  .flex-main-img {
+    width: 80%;
+  }
+
+  .flex-title {
+    padding: 8px;
+    .name h1 {
+      font-size: 26px;
+    }
+    .description p {
+      font-size: 18px;
+      font-weight: lighter;
+    }
+  }
+  .flex-content {
+    padding: 8px;
+    font-size: 18px;
+  }
+  .flex-info-restaurant {
+    padding: 20px;
+    font-size: 16px;
+    font-weight: lighter;
+    background-color: rgba( 5, 5, 5, 0.05);
+  }
+  #booking-btn {
+    margin: 20px;
+    color: black;
+    text-decoration: none;
+  }
+}
+

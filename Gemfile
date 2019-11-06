@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 ruby '2.6.3'
 
-gem 'devise'
-
 gem 'bootsnap', require: false
 gem 'carrierwave', '~> 1.2'
 gem 'cloudinary', '~> 1.9.1'
+gem 'devise'
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'faker'
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
 gem 'puma'
@@ -18,6 +18,7 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
 gem 'sassc-rails'
 gem 'simple_form'
+gem 'turbolinks', '~> 2.5', '>= 2.5.3'
 gem 'uglifier'
 gem 'webpacker'
 
