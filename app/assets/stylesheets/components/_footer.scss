@@ -1,11 +1,10 @@
 .flex-footer {
   justify-content: space-between;
   flex-direction: column;
-  padding-top: 60px;
 }
 
 .flex-footer a {
-  font-size: 20px;
+  font-size: 16px;
   color: black;
 }
 .flex-footer a:hover{
@@ -48,6 +47,6 @@
 .flex-rights {
   text-align: center;
 }
-.flex-rights {
-  font-size: 10px;
+.flex-rights h5{
+  font-size: 12px;
 }
