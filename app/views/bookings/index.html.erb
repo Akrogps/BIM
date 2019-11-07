@@ -1,7 +1,23 @@
-<h1>Bookings#index</h1>
+<%= render "shared/navbar" %>
+<div class="bookings-body">
+  <div class="head">
+    <h1> Bookings</h1>
+  </div>
+  <div class="status-box">
+    <div class="status">Upcoming</div>
+    <div class="status">All</div>
+  </div>
+  <div class="container">
+      <ul>
+        <% @bookings.each do |booking| %>
+        <div class="card-booking">
+          <li style="font-weight: bolder; padding-bottom: 10px"><%= booking.restaurant.name %></li>
+          <li> Date: <%= booking.date %> </li>
+          <li> Participants: <%= booking.participants %></li>
 
-<ul>
-  <% @bookings.each do |booking| %>
-    <li><%= booking.date %>: <%= booking.participants %> participants @ <%= booking.restaurant.name %></li>
-  <% end %>
-</ul>
+        </div>
+        <% end %>
+      </ul>
+  </div>
+</div>
+<%= render 'shared/footer' %>
