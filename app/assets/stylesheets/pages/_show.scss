@@ -1,5 +1,5 @@
 .container {
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 
   .flex-main-img img {
     width: 100%;
@@ -20,6 +20,8 @@
   }
 
   .flex-content {
+    text-align: justify;
+    text-indent: 24px;
     padding-bottom: 8px;
     font-size: 18px;
   }
