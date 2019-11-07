@@ -39,5 +39,44 @@
 
 .login_div {
   margin-right: 20px;
+  float: left;
+  overflow: hidden;
+
+  .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  }
 }
 
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 40px;
+  background-color: white;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+
+  a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+
+    &:hover {
+      background-color: #5FB5AD;
+    }
+  }
+}
+
+.login_div:hover .dropdown-content {
+  display: block;
+}
