@@ -21,16 +21,18 @@
 </div>
 
 <div class="container">
-  <div class="card-grid" id="restaurants">
+  <div class="card-grid" >
     <% @restaurants.each do |restaurant| %>
       <div class="card-resto">
         <%= cl_image_tag(restaurant.images.first.cloudinary_url, width: 400, height: 300, crop: :fit) %>
         <div class="card-resto-infos">
-          <div>
-            <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
-            <p><%=h truncate(restaurant.content, :length => 80) %></p>
+          <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
+          <div class="card-resto-pricing">
+            <p> <%= restaurant.price_indication %></p>
           </div>
-          <p class="card-resto-pricing"> <%= restaurant.price_indication %></p>
+        </div>
+        <div class="card-resto-content">
+          <p><%=h truncate(restaurant.content, :length => 80) %></p>
         </div>
         <div class="card-resto-category">
           <p><%= restaurant.description %></p>

@@ -14,8 +14,19 @@
   opacity: .7;
   margin: 0;
   }
+
+  .card-resto-pricing {
+  width: 40px;
+  font-weight: bold;
+  }
+  .card-resto-content {
+  padding: 0px 30px 10px 30px;
+  text-align: justify;
+  }
+
   .card-resto-infos {
-  padding: 16px;
+  color: black;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -25,7 +36,7 @@
   .card-resto-category {
   text-align: center;
   font-weight: bolder;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   }
 }
 
@@ -39,6 +50,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
-  margin-top: 35px;
-  margin-bottom: 35px;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
