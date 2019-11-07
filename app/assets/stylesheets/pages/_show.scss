@@ -1,12 +1,15 @@
 .container {
+  margin-bottom: 8px;
+
   .flex-main-img img {
     width: 100%;
-    height: 100%;
+    height: 400px;
+    object-fit: cover;
   }
 
   .flex-title {
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     .name h1 {
       font-size: 26px;
     }
@@ -17,12 +20,12 @@
   }
 
   .flex-content {
-    padding-top: 8px;
     padding-bottom: 8px;
     font-size: 18px;
   }
 
   .flex-info-restaurant {
+    border-radius: 2px;
     text-align: center;
     font-size: 16px;
     font-weight: lighter;
@@ -34,12 +37,24 @@
   }
   #deliveroo-btn {
     margin-top: 8px;
+    margin-bottom: 8px;
     width: 100%;
     color: black;
     text-decoration: none;
+    border-color: #5FB5AD;
+
+    &:hover {
+      background-color: #5FB5AD;
+    }
   }
-  .booking_form {
-    color: black;
+
+  #new_booking {
+    border-radius: 2px;
+    padding: 8px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: lighter;
+    background-color: rgba( 5, 5, 5, 0.05);
   }
 }
 

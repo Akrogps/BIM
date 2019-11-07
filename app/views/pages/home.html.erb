@@ -1,32 +1,34 @@
 <%= render "shared/navbar" %>
 
 <div class="banner" style=" ">
-  <div class="banner-content text-center d-flex">
-    <input class="form-control" type="text" placeholder="Address..." aria-label="Search">
-    <select class="form-control" type="text" placeholder="Cuisine type" aria-label="Search">
-      <option>Italian</option>
-      <option>French</option>
-      <option>American</option>
-      <option>Asian</option>
-      <option>Belgian</option>
-    </select>
-    <input class="form-control" type="datetime-local" placeholder="All addresses" aria-label="Search">
-    <select class="form-control" type="text" placeholder="Number of persons" aria-label="Search">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-    </select>
-    <a class="btn btn-flat" href="#restaurants">Go</a>
+  <div class="header">
+    <h2>AIRBNBIM</h2>
+    <div class="banner-content text-center d-flex">
+      <input class="form-control-banner" type="text" placeholder="Address..." aria-label="Search">
+      <select class="form-control-banner" type="text" placeholder="Cuisine type" aria-label="Search">
+        <option>Italian</option>
+        <option>French</option>
+        <option>American</option>
+        <option>Asian</option>
+        <option>Belgian</option>
+      </select>
+      <input class="form-control-banner" type="datetime-local" placeholder="All addresses" aria-label="Search">
+      <select class="form-control-banner" type="text" placeholder="Number of persons" aria-label="Search">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+      </select>
+      <a class="btn btn-flat" href="#restaurants">Go</a>
+    </div>
   </div>
 </div>
-
 <div class="container">
   <div class="card-grid" >
     <% @restaurants.each do |restaurant| %>
       <div class="card-resto">
         <%= cl_image_tag(restaurant.images.first.cloudinary_url, width: 400, height: 300, crop: :fit) %>
-        <div class="card-resto-infos">
-          <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
+        <div class="card-resto-infos" style="text-decoration: none;">
+          <h2><%= link_to restaurant.name, restaurant_path(restaurant), class: "text-dark" %></h2>
           <div class="card-resto-pricing">
             <p> <%= restaurant.price_indication %></p>
           </div>
