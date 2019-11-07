@@ -1,2 +1,35 @@
 <h1>Restaurants#new</h1>
-<p>Find me in app/views/restaurants/new.html.erb</p>
+
+<%= simple_form_for(@restaurant) do |f| %>
+  <div class="form-group">
+    <%= f.input :name, placeholder: 'Name' %>
+  </div>
+  <div class="form-group">
+    <%= f.input :address, placeholder: 'Address' %>
+  </div>
+  <div class="form-group">
+    <%= f.input :description, placeholder: 'Small description' %>
+  </div>
+  <div class="form-group">
+    <%= f.input :content, placeholder: 'Describe your place in a beautiful way' %>
+  </div>
+  <div class="form-group">
+    <%= f.input :website, placeholder: 'Website' %>
+  </div>
+  <div class="form-group">
+    <%= f.input :phone_number, placeholder: 'Phone Number' %>
+  </div>
+  <div class="form-group">
+    <%= f.input :opening_hours, placeholder: 'From Monday to Tuesday, from 9am to 9pm' %>
+  </div>
+  <div class="form-group">
+    <%= f.input :price_indication, collection: ["€", "€€", "€€€", "€€€€"] %>
+  </div>
+  <div class="form-group">
+    <%= f.simple_fields_for :images do |p| %>
+      <%= p.input :cloudinary_url %>
+      <%= p.input :cloudinary_url_cache, as: :hidden %>
+    <% end %>
+  </div>
+  <%= f.submit "Create a new restaurant" %>
+<% end %>
