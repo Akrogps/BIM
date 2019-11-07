@@ -7,30 +7,29 @@
     </div>
     <div class="flex-title text-center col-12">
       <div class="name">
-        <h1><strong><%="#{@restaurant.name}"%></strong></h1>
+        <h1><strong><%=@restaurant.name%></strong></h1>
       </div>
       <div class="description">
-        <h4><light><%="#{@restaurant.description}"%></light></h4>
+        <h4><light><%=@restaurant.description%></light></h4>
       </div>
     </div>
     <div class="row">
       <div class="flex-content col-8 (wider)" style="background-color: transparent;">
-          <p><%="#{@restaurant.content}"%></p>
+          <p><%=@restaurant.content%></p>
       </div>
       <div class="flex-sidebar-restaurant col">
         <div class="flex-info-restaurant">
           <div class="info">
-            <p id="info"><%="#{@restaurant.address}" %></p>
-            <a href=<%="#{@restaurant.website}" %>></a><p id="info"><%="#{@restaurant.phone_number}" %></p>
-            <p id="info"><%="#{@restaurant.opening_hours}" %></p>
-            <p id="info"><%="#{@restaurant.price_indication}" %></p>
+            <p id="info"><%=@restaurant.address%></p>
+            <p><%= link_to "Website", @restaurant.website %></p>
+            <p id="info"><%=@restaurant.phone_number%></p>
+            <p id="info"><%=@restaurant.opening_hours%></p>
+            <p id="info"><%=@restaurant.price_indication%></p>
           </div>
         </div>
         <a href="https://deliveroo.be/fr" class="btn btn-link btn-outline-success" id="deliveroo-btn">Deliveroo</a>
       </div>
-      <div class="flex-booking">
-        <%= render 'bookings/booking_form' %>
-      </div>
+
     </div>
   </div>
 </div>
