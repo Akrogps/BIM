@@ -12,6 +12,7 @@ class RestaurantsController < ApplicationController
   def new
     @restaurant = current_user.restaurants.new
     authorize @restaurant
+    @restaurant.images.build
   end
 
   def create
@@ -48,6 +49,6 @@ class RestaurantsController < ApplicationController
   end
 
   def restaurant_params
-    params.require(:restaurant).permit(:name, :address, :description, :content, :website, :opening_hours)
+    params.require(:restaurant).permit(:name, :address, :description, :content, :website, :opening_hours, images_attributes: [:cloudinary_url])
   end
 end
