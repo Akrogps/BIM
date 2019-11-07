@@ -3,6 +3,10 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 
+  a {
+  text-decoration: none;
+  }
+
   h2 {
     font-size: 16px;
     font-weight: bold;
@@ -26,11 +30,12 @@
 
   .card-resto-infos {
     color: black;
-    padding: 20px;
+    padding: 20px 20px 20px 30px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     position: relative;
+    text-decoration: none;
   }
 
   .card-resto-category {
@@ -48,8 +53,10 @@
 
 .card-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, 250px);
   grid-gap: 16px;
   margin-top: 25px;
   margin-bottom: 25px;
 }
+
+
