@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
     authorize @booking
 
     if @booking.save
-      redirect_to restaurant_path(@restaurant)
+      redirect_to restaurant_path(@restaurant), notice: "booking created"
     else
       render :new
     end

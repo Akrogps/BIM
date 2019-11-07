@@ -12,7 +12,6 @@ class RestaurantsController < ApplicationController
   def new
     @restaurant = current_user.restaurants.new
     authorize @restaurant
-    @restaurant.images.build
   end
 
   def create
@@ -20,7 +19,7 @@ class RestaurantsController < ApplicationController
     authorize @restaurant
 
     if @restaurant.save
-      redirect_to restaurant_path(@restaurant), notice: "booking created"
+      redirect_to new_restaurant_image_path(@restaurant)
     else
       render :new
     end
@@ -49,6 +48,6 @@ class RestaurantsController < ApplicationController
   end
 
   def restaurant_params
-    params.require(:restaurant).permit(:name, :address, :description, :content, :website, :opening_hours, images_attributes: [:cloudinary_url])
+    params.require(:restaurant).permit(:name, :address, :description, :content, :website, :opening_hours)
   end
 end

@@ -25,11 +25,5 @@
   <div class="form-group">
     <%= f.input :price_indication, collection: ["€", "€€", "€€€", "€€€€"] %>
   </div>
-  <div class="form-group">
-    <%= f.simple_fields_for :images do |p| %>
-      <%= p.input :cloudinary_url %>
-      <%= p.input :cloudinary_url_cache, as: :hidden %>
-    <% end %>
-  </div>
-  <%= f.submit "Create a new restaurant" %>
+  <%= f.submit "Next" %>
 <% end %>
