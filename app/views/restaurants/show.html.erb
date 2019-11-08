@@ -29,13 +29,13 @@
         <div class="flex-info-restaurant">
           <div class="info">
             <p id="info"><%=@restaurant.address%></p>
-            <p><%= link_to "Website", @restaurant.website %></p>
+            <p><%= link_to "Website", @restaurant.website, target: :_blank %></p>
             <p id="info"><%=@restaurant.phone_number%></p>
             <p id="info"><%=@restaurant.opening_hours%></p>
             <p id="info"><%=@restaurant.price_indication%></p>
           </div>
         </div>
-        <a href="https://deliveroo.be/fr" class="btn btn-link btn-outline-success" id="deliveroo-btn">Deliveroo</a>
+        <a href="https://deliveroo.be/fr" class="btn btn-link btn-outline-success" id="deliveroo-btn" target="_blank">Deliveroo</a>
         <div>
           <%= render 'bookings/booking_form' %>
         </div>
