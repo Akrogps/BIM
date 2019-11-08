@@ -24,4 +24,30 @@
   width: auto;
 }
 
+.form-search-large {
+  width: 40vh;
+  margin: 0 10px;
 
+  .form-group {
+    color: white;
+  }
+}
+.form-search-medium {
+  width: 25vh;
+  margin: 0 10px;
+  .form-group {
+    color: white;
+  }
+}
+.search-container {
+  width: 120vh;
+  display: flex;
+  align-items: end;
+  label {
+    visibility: hidden;
+  }
+
+  #new_restaurant {
+    display: flex;
+  }
+}

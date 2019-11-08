@@ -1,35 +1,19 @@
-<%= simple_form_for(@restaurant, url: restaurants_path, method: :get) do |f| %>
-  <div class="form-group">
-    <%= f.input :name, placeholder: 'Name of the restaurant' %>
-  </div>
-  <div class="form-group">
-    <%= f.input :address, placeholder: 'Address of the restaurant' %>
-  </div>
-  <div class="form-group">
-    <%= f.input :price_indication, collection: ["€", "€€", "€€€", "€€€€"] %>
-  </div>
-  <%= f.submit "Go", value: "restaurant_search" %>
-<% end %>
 
-<div class="banner" style=" ">
+<div class="banner">
   <div class="header">
-    <h2>AIRBNBIM</h2>
-    <div class="banner-content text-center d-flex">
-      <input class="form-control-banner" type="text" placeholder="Address..." aria-label="Search">
-      <select class="form-control-banner" type="text" placeholder="Cuisine type" aria-label="Search">
-        <option>Italian</option>
-        <option>French</option>
-        <option>American</option>
-        <option>Asian</option>
-        <option>Belgian</option>
-      </select>
-      <input class="form-control-banner" type="datetime-local" placeholder="All addresses" aria-label="Search">
-      <select class="form-control-banner" type="text" placeholder="Number of persons" aria-label="Search">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-      </select>
-      <a class="btn btn-flat" href="#restaurants">Go</a>
+    <div class="search-container">
+      <%= simple_form_for(@restaurant, url: restaurants_path, method: :get) do |f| %>
+        <div class="form-search-large">
+          <%= f.input :name, placeholder: 'Name of the restaurant' %>
+        </div>
+        <div class="form-search-large">
+          <%= f.input :address, placeholder: 'Address of the restaurant' %>
+        </div>
+        <div class="form-search-medium">
+          <%= f.input :price_indication, collection: ["€", "€€", "€€€", "€€€€"], prompt: 'Price indication' %>
+        </div>
+        <%= f.submit "Go", value: "Search", class: "btn-flat-search" %>
+      <% end %>
     </div>
   </div>
 </div>
