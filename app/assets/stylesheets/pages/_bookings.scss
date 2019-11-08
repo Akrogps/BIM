@@ -5,17 +5,21 @@
 }
 
 .bookings-body {
-  background-color: white;
+  background-color: transparent;
 }
 
 .status {
   border: 1px solid #EBEBEB;
   padding: 10px;
+  margin: 10px;
   border-radius: 5px ;
   width: auto;
+  background-color: #5FB5AD;
+  color: white;
 
   &:hover {
     background-color: #EBEBEB;
+    color: black;
   }
 }
 .status-box {
@@ -25,13 +29,11 @@
 
 .card-booking {
   overflow: hidden;
-  background: white;
+  background: transparent;
   height: 120px;
   padding-bottom: 24px !important;
   padding-right: 16px !important;
   padding-top: 24px !important;
   position: relative !important;
-  border-bottom: 1px solid rgb(235, 235, 235) !important;
+  border-bottom: 1px solid #EBEBEB !important;
 }
-
-
