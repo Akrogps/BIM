@@ -14,13 +14,14 @@ visitor1 = User.create!(first_name: "Noel", last_name: "Flantier", username: "OS
     name: Faker::Restaurant.unique.name,
     address: Faker::Address.unique.full_address,
     description: Faker::Book.unique.title,
-    content: Faker::Restaurant.unique.description,
+    content: Faker::Lorem.unique.sentence(word_count: 200),
     website: Faker::Internet.unique.url,
     opening_hours: "From Monday To Tuesday, from 9am to 9pm" ,
     phone_number: Faker::PhoneNumber.phone_number ,
     price_indication: ["€", "€€", "€€€", "€€€€"].sample
   }
 
+  sleep(2.5)
   restaurant = Restaurant.new(attributes)
   restaurant.user = [host1, host2].sample
   restaurant.save!
