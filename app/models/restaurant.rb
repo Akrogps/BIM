@@ -9,6 +9,6 @@ class Restaurant < ApplicationRecord
   validates :address, presence: true, uniqueness: true
   validates :description, presence: true
   validates :content, presence: true
-  validates :website, format: { with: /https?:\/\/[\S]+/ }, allow_blank: true
+  validates :website, format: { with: /https?:\/\/[\S]+/ }
   validates :opening_hours, presence: true
 end
