@@ -9,14 +9,15 @@ class RestaurantsController < ApplicationController
     @restaurants = policy_scope(Restaurant).order(created_at: :desc)
     @restaurant = Restaurant.new
 
-    Restaurant.search(params[:restaurant], where: {
-        name: restaurant_params[:name],
+    @resto_list = Restaurant.search(where: {
+      # name: /#{restaurant_params[:name]}/
+      name: {like: "%#{restaurant_params[:name]}%"}
         # location: {near: {lat: address.lat, lon: address.lon}, within: "100mi"},
-        price_indication: restaurant_params[:price_indication],
-        limit: 10,
-        offset: 50,
         # order: {_score: :desc}
-    })
+      },
+      # limit: 10,
+      # offset: 50
+    )
   end
 
   def show
