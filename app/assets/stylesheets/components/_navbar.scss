@@ -33,12 +33,23 @@
   width: auto;
   margin-left: 20px ;
 
+  &:hover{
+    color: #484848;
+    text-decoration: none;
+
+  }
+
 }
 
 .navbar_element_login {
   margin-right: 0px ;
   color: #5FB5AD;
   width: auto;
+
+  &:hover{
+    color: #484848;
+    text-decoration: none;
+  }
 }
 
 .btn {
@@ -82,6 +93,7 @@
     &:hover {
       color: white;
       background-color: #5FB5AD;
+      text-decoration: none;
     }
   }
 }
