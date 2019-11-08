@@ -56,10 +56,11 @@ class RestaurantsController < ApplicationController
 
   def autocomplete
     @restaurants = Restaurant.search(params[:query], {
+      fields: [:name],
       match: :word_start,
       limit: 10,
       load: false,
-      misspellings: {below: 5}
+      misspellings: {below: 0}
     }).map(&:name)
 
     render json: @restaurants

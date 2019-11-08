@@ -10,17 +10,23 @@ input.addEventListener('input', (event) => {
   })
   .then((data) => {
     const items = input.parentNode.querySelectorAll('.dropdown-item')
-    console.log(items)
     if (items) {
       items.forEach(el => el.remove());
     }
 
     data.forEach(element => {
       input.parentNode.insertAdjacentHTML('beforeend', `
-        <div class="dropdown-item">
+        <div class="dropdown-item search-result">
           ${element}
         </div>
       `);
     })
-  })
+
+    const results = input.parentNode.querySelectorAll('.search-result')
+    results.forEach(result => {
+      result.addEventListener('click', (e) => {
+        input.value = e.target.innerText;
+      })
+    })
+  });
 });
