@@ -1,4 +1,15 @@
-<%= render "shared/navbar" %>
+<%= simple_form_for(@restaurant, url: restaurants_path, method: :get) do |f| %>
+  <div class="form-group">
+    <%= f.input :name, placeholder: 'Name of the restaurant' %>
+  </div>
+  <div class="form-group">
+    <%= f.input :address, placeholder: 'Address of the restaurant' %>
+  </div>
+  <div class="form-group">
+    <%= f.input :price_indication, collection: ["€", "€€", "€€€", "€€€€"] %>
+  </div>
+  <%= f.submit "Go", value: "restaurant_search" %>
+<% end %>
 
 <div class="banner" style=" ">
   <div class="header">
@@ -23,7 +34,7 @@
   </div>
 </div>
 <div class="container">
-  <div class="card-grid" >
+  <div class="card-grid justify-content-center" >
     <% @restaurants.each do |restaurant| %>
       <div class="card-resto">
         <%= cl_image_tag(restaurant.images.first.cloudinary_url, width: 400, height: 300, crop: :fit) %>
@@ -43,5 +54,3 @@
     <% end %>
   </div>
 </div>
-
-<%= render 'shared/footer' %>

@@ -3,5 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @restaurants = Restaurant.all
+    @restaurant = Restaurant.new
   end
 end
