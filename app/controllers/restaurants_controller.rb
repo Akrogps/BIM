@@ -12,11 +12,11 @@ class RestaurantsController < ApplicationController
   def new
     @restaurant = current_user.restaurants.new
     authorize @restaurant
-    @restaurant.images.build
   end
 
   def create
     @restaurant = current_user.restaurants.new(restaurant_params)
+    @restaurant.images.build(remote_cloudinary_url_url: "https://source.unsplash.com/random/1600x900/?restaurant")
     authorize @restaurant
 
     if @restaurant.save
@@ -49,6 +49,6 @@ class RestaurantsController < ApplicationController
   end
 
   def restaurant_params
-    params.require(:restaurant).permit(:name, :address, :description, :content, :website, :opening_hours, images_attributes: [:cloudinary_url])
+    params.require(:restaurant).permit(:name, :address, :description, :content, :website, :opening_hours)
   end
 end
