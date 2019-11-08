@@ -1,2 +1,37 @@
-<h1>Restaurants#edit</h1>
-<p>Find me in app/views/restaurants/edit.html.erb</p>
+<div class="form-container">
+  <h3>Edit '<%= @restaurant.name %>'</h3>
+
+  <%= simple_form_for(@restaurant) do |f| %>
+    <div class="group-form-element">
+      <div class="form-element">
+        <%= f.input :name %>
+      </div>
+      <div class="form-element form-full-right" >
+        <%= f.input :address %>
+      </div>
+    </div>
+    <div class="form-element">
+      <%= f.input :description %>
+    </div>
+    <div class="form-element">
+      <%= f.input :content %>
+    </div>
+    <div class="group-form-element">
+      <div class="form-element form-full-left">
+        <%= f.input :website %>
+      </div>
+      <div class="form-element">
+        <%= f.input :phone_number %>
+      </div>
+    </div>
+    <div class="group-form-element">
+      <div class="form-element form-full-left">
+        <%= f.input :opening_hours %>
+      </div>
+      <div class="form-element">
+        <%= f.input :price_indication, collection: ["€", "€€", "€€€", "€€€€"] %>
+      </div>
+    </div>
+    <%= f.submit "Edit this restaurant", class: "btn-flat" %>
+  <% end %>
+</div>

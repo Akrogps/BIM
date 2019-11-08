@@ -1,12 +1,21 @@
-
 <div class="container">
   <div class="row d-flex justify-content-center">
     <div class="flex-main-img">
       <%= cl_image_tag(@restaurant.images.first.cloudinary_url, crop: :fit) %>
     </div>
     <div class="flex-title text-center col-12">
-      <div class="name">
-        <h1><strong><%=@restaurant.name%></strong></h1>
+      <div class="row justify-content-between">
+        <div class="col-2"></div>
+        <div class="name col-8">
+          <h1><strong><%=@restaurant.name%></strong></h1>
+        </div>
+        <div class="icons col-2">
+          <%= link_to (raw("<i class='far fa-edit first'></i>")), edit_restaurant_path(@restaurant) %>
+          <%= link_to (raw("<i class='far fa-trash-alt'></i>")), restaurant_path(@restaurant),
+            method: :delete,
+            data: { confirm: "Are you sure you want to delete '#{@restaurant.name}'" }
+          %>
+        </div>
       </div>
       <div class="description">
         <h4><light><%=@restaurant.description%></light></h4>
@@ -34,4 +43,3 @@
     </div>
   </div>
 </div>
-
