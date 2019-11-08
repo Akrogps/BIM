@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_05_120108) do
+ActiveRecord::Schema.define(version: 2019_11_08_144445) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2019_11_05_120108) do
   create_table "categories_restaurants", id: false, force: :cascade do |t|
     t.bigint "category_id", null: false
     t.bigint "restaurant_id", null: false
+    t.index ["category_id", "restaurant_id"], name: "index_categories_restaurants_on_category_id_and_restaurant_id"
   end
 
   create_table "images", force: :cascade do |t|
@@ -59,6 +60,8 @@ ActiveRecord::Schema.define(version: 2019_11_05_120108) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_restaurants_on_user_id"
   end
 
