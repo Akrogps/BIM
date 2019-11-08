@@ -15,7 +15,7 @@
 </div>
 <div class="search-page">
   <div class="flex-card-container">
-    <% @restaurants.each do |restaurant| %>
+    <% @resto_list.to_a.each do |restaurant| %>
       <div class="card-resto">
         <%= cl_image_tag(restaurant.images.first.cloudinary_url, width: 400, height: 300, crop: :fit) %>
         <div class="card-resto-infos" style="text-decoration: none;">
