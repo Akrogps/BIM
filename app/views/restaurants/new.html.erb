@@ -1,35 +1,37 @@
-<h1>Restaurants#new</h1>
+<div class="form-container">
+  <h3>Add a restaurant</h3>
 
-<%= simple_form_for(@restaurant) do |f| %>
-  <div class="form-group">
-    <%= f.input :name, placeholder: 'Name' %>
-  </div>
-  <div class="form-group">
-    <%= f.input :address, placeholder: 'Address' %>
-  </div>
-  <div class="form-group">
-    <%= f.input :description, placeholder: 'Small description' %>
-  </div>
-  <div class="form-group">
-    <%= f.input :content, placeholder: 'Describe your place in a beautiful way' %>
-  </div>
-  <div class="form-group">
-    <%= f.input :website, placeholder: 'Website' %>
-  </div>
-  <div class="form-group">
-    <%= f.input :phone_number, placeholder: 'Phone Number' %>
-  </div>
-  <div class="form-group">
-    <%= f.input :opening_hours, placeholder: 'From Monday to Tuesday, from 9am to 9pm' %>
-  </div>
-  <div class="form-group">
-    <%= f.input :price_indication, collection: ["€", "€€", "€€€", "€€€€"] %>
-  </div>
-  <div class="form-group">
-    <%= f.simple_fields_for :images do |p| %>
-      <%= p.input :cloudinary_url %>
-      <%= p.input :cloudinary_url_cache, as: :hidden %>
-    <% end %>
-  </div>
-  <%= f.submit "Create a new restaurant" %>
-<% end %>
+  <%= simple_form_for(@restaurant) do |f| %>
+    <div class="group-form-element">
+      <div class="form-element">
+        <%= f.input :name, placeholder: 'Name' %>
+      </div>
+      <div class="form-element form-full-right" >
+        <%= f.input :address, placeholder: 'Address' %>
+      </div>
+    </div>
+    <div class="form-element">
+      <%= f.input :description, placeholder: 'Small description' %>
+    </div>
+    <div class="form-element">
+      <%= f.input :content, placeholder: 'Describe your place in a beautiful way' %>
+    </div>
+    <div class="group-form-element">
+      <div class="form-element form-full-left">
+        <%= f.input :website, placeholder: 'Website' %>
+      </div>
+      <div class="form-element">
+        <%= f.input :phone_number, placeholder: '+32 2 765 43 21' %>
+      </div>
+    </div>
+    <div class="group-form-element">
+      <div class="form-element form-full-left">
+        <%= f.input :opening_hours, placeholder: 'From Monday to Tuesday, from 9am to 9pm' %>
+      </div>
+      <div class="form-element">
+        <%= f.input :price_indication, collection: ["€", "€€", "€€€", "€€€€"], prompt: "Price indication" %>
+      </div>
+    </div>
+    <%= f.submit "Create a new restaurant", class: "btn-flat" %>
+  <% end %>
+</div>
