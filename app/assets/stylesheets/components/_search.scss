@@ -18,6 +18,7 @@
   display: flex;
   width: 100%;
   justify-content: center;
+  padding-top: 60px;
   // display: grid;
 }
 
@@ -37,6 +38,30 @@
   position: sticky;
   top: 0;
   grid-template-columns: 1fr;
+  margin-bottom: 25px;
+}
+
+.form-control-banner {
+  padding-top: 60px;
+  margin: 4px;
+  width: auto;
+  border-radius: 5px;
+}
+.btn {
+    padding: 15px 15px;
+  }
+
+.btn-flat {
+  color: white;
+  padding: 8px 20px;
+  border-radius: 4px;
+  background: #5FB5AD;
+  transition: background 0.3s ease;
+
+  &:hover {
+  background: #5FB5AD;
+  color: white;
+  }
 }
 
 // .card {
