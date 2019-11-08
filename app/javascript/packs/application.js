@@ -25,8 +25,16 @@ input.addEventListener('input', (event) => {
     const results = input.parentNode.querySelectorAll('.search-result')
     results.forEach(result => {
       result.addEventListener('click', (e) => {
+        event.stopPropagation();
         input.value = e.target.innerText;
       })
     })
   });
+});
+
+$(window).click(function() {
+    const items = input.parentNode.querySelectorAll('.dropdown-item')
+    if (items) {
+      items.forEach(el => el.remove());
+    }
 });
