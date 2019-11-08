@@ -1,15 +1,16 @@
 class RestaurantsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show, :autocomplete]
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
+  skip_after_action :verify_authorized, only: [:autocomplete]
 
   def index
     @restaurants = policy_scope(Restaurant).order(created_at: :desc)
     @restaurant = Restaurant.new
 
-    Restaurant.search (params[:restaurant], where: {
-        name: restaurant.name,
+    Restaurant.search(params[:restaurant], where: {
+        name: restaurant_params[:name],
         # location: {near: {lat: address.lat, lon: address.lon}, within: "100mi"},
-        price_indication: restaurant.price_indication,
+        price_indication: restaurant_params[:price_indication],
         limit: 10,
         offset: 50,
         order: {_score: :desc}
@@ -49,6 +50,16 @@ class RestaurantsController < ApplicationController
     @restaurant.destroy
 
     redirect_to root_path
+  end
+
+  def autocomplete
+    @restaurants = Restaurant.search(params[:name], {
+      fields: ["name"],
+      match: :word_start,
+      limit: 10,
+      load: false,
+      misspellings: {below: 5}
+    }).map(&:name)
   end
 
   private

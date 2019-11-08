@@ -17,14 +17,4 @@ class Restaurant < ApplicationRecord
   def search_data
     attributes.merge(location: {lat: latitude, lon: longitude})
   end
-
-   def autocomplete
-    render json: Restaurant.search(params[:query], {
-      fields: ["Name"],
-      match: :word_start,
-      limit: 10,
-      load: false,
-      misspellings: {below: 5}
-    }).map(&:name)
-  end
 end
