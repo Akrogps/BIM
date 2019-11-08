@@ -12,7 +12,7 @@ class RestaurantsController < ApplicationController
     @resto_list = Restaurant.search(where: {
       # name: /#{restaurant_params[:name]}/
       name: {like: "%#{restaurant_params[:name]}%"},
-      price_indication: {like: "#{restaurant_params[:price_indication]}"},
+      # price_indication: {like: "#{restaurant_params[:price_indication]}"},
         # location: {near: {lat: address.lat, lon: address.lon}, within: "100mi"},
         # order: {_score: :desc}
       },
