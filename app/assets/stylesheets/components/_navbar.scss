@@ -10,10 +10,11 @@
 }
 
 .title {
-  font-family: Open Sans;
   padding-top: 5px;
   .home-title {
     color: black;
+    font-family: 'Playfair Display', serif;
+    font-size: 40;
     &:hover {
       text-decoration: none;
     }

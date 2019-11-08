@@ -1,3 +1,8 @@
+body {
+  font-family: 'Ubuntu', sans-serif;
+;
+}
+
 .banner {
 
   height: 100vh;
@@ -46,6 +51,7 @@
 
 .header {
   margin: 0 auto;
+
   h2 {
     color: white;
   }
@@ -53,6 +59,27 @@
 
 .margin-top  {
   margin-top: 20px;
+}
+
+
+#restaurant_name, #restaurant_address, #restaurant_price_indication {
+  border-radius: 0 ;
+}
+
+.btn-flat-search {
+  color: white;
+  padding: 8px 20px;
+  border-radius: 4px;
+  background: #5FB5AD;
+  transition: background 0.3s ease;
+  height: 40px;
+  margin-top: 31px;
+  border: none;
+
+  &:hover {
+  background: #5FB5AD;
+  color: white;
+  }
 }
 
 
