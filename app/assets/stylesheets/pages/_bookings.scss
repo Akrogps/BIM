@@ -1,0 +1,39 @@
+.head {
+  margin: 0 0 0 120px ;
+  padding: 110px 0 0 0;
+  color: #484848 !important;
+}
+
+.bookings-body {
+  background-color: transparent;
+}
+
+.status {
+  border: 1px solid #EBEBEB;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px ;
+  width: auto;
+  background-color: #5FB5AD;
+  color: white;
+
+  &:hover {
+    background-color: #EBEBEB;
+    color: black;
+  }
+}
+.status-box {
+  margin: 0px 0 20px 120px ;
+  display: flex;
+}
+
+.card-booking {
+  overflow: hidden;
+  background: transparent;
+  height: 120px;
+  padding-bottom: 24px !important;
+  padding-right: 16px !important;
+  padding-top: 24px !important;
+  position: relative !important;
+  border-bottom: 1px solid #EBEBEB !important;
+}
