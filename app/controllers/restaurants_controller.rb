@@ -1,3 +1,5 @@
+require "pry"
+
 class RestaurantsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :autocomplete]
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
@@ -13,7 +15,7 @@ class RestaurantsController < ApplicationController
         price_indication: restaurant_params[:price_indication],
         limit: 10,
         offset: 50,
-        order: {_score: :desc}
+        # order: {_score: :desc}
     })
   end
 
@@ -53,13 +55,14 @@ class RestaurantsController < ApplicationController
   end
 
   def autocomplete
-    @restaurants = Restaurant.search(params[:name], {
-      fields: ["name"],
+    @restaurants = Restaurant.search(params[:query], {
       match: :word_start,
       limit: 10,
       load: false,
       misspellings: {below: 5}
     }).map(&:name)
+
+    render json: @restaurants
   end
 
   private

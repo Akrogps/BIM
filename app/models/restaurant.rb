@@ -15,6 +15,6 @@ class Restaurant < ApplicationRecord
   validates :opening_hours, presence: true
 
   def search_data
-    attributes.merge(location: {lat: latitude, lon: longitude})
+    attributes.merge(name: name) #.merge(location: {lat: latitude, lon: longitude})
   end
 end
