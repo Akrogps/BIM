@@ -4,6 +4,16 @@ class RestaurantsController < ApplicationController
 
   def index
     @restaurants = policy_scope(Restaurant).order(created_at: :desc)
+    @restaurant = Restaurant.new
+
+    Restaurant.search (params[:restaurant], where: {
+        name: restaurant.name,
+        # location: {near: {lat: address.lat, lon: address.lon}, within: "100mi"},
+        price_indication: restaurant.price_indication,
+        limit: 10,
+        offset: 50,
+        order: {_score: :desc}
+    })
   end
 
   def show

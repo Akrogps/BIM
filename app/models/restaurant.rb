@@ -1,4 +1,6 @@
 class Restaurant < ApplicationRecord
+  searchkick locations: [:location], word_start: [:name]
+
   belongs_to :user
   has_many :bookings, dependent: :destroy
   has_many :categories, through: :categories_restaurants
@@ -9,6 +11,20 @@ class Restaurant < ApplicationRecord
   validates :address, presence: true, uniqueness: true
   validates :description, presence: true
   validates :content, presence: true
-  validates :website, format: { with: /https?:\/\/[\S]+/ }
+  validates :website, format: { with: /https?:\/\/[\S]+/ }, allow_blank: true
   validates :opening_hours, presence: true
+
+  def search_data
+    attributes.merge(location: {lat: latitude, lon: longitude})
+  end
+
+   def autocomplete
+    render json: Restaurant.search(params[:query], {
+      fields: ["Name"],
+      match: :word_start,
+      limit: 10,
+      load: false,
+      misspellings: {below: 5}
+    }).map(&:name)
+  end
 end
